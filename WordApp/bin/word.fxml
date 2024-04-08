@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" prefHeight="714.0" prefWidth="897.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <MenuBar prefHeight="24.0" prefWidth="599.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="openitem" mnemonicParsing="false" onAction="#openitem" text="Open" />
+                  <MenuItem fx:id="newitem" mnemonicParsing="false" onAction="#newitem" text="New" />
+                  <MenuItem fx:id="saveitem" mnemonicParsing="false" onAction="#saveitem" text="Save" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem fx:id="about" mnemonicParsing="false" onAction="#about" text="About" />
+                  <MenuItem fx:id="train" mnemonicParsing="false" onAction="#train" text="Short Training" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <TabPane prefHeight="106.0" prefWidth="599.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="grid" text="Home">
+               <content>
+                  <GridPane style="-fx-background-color: #d8c8c8e7;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="264.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="0.0" prefWidth="118.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="0.0" prefWidth="88.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="24.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <GridPane alignment="CENTER" style="-fx-background-color: #d8c8c8e7;">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="131.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="133.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <ComboBox fx:id="fami" prefWidth="150.0" GridPane.columnIndex="1" />
+                              <ComboBox fx:id="font_size" prefHeight="25.0" prefWidth="40.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label alignment="TOP_RIGHT" prefHeight="16.0" prefWidth="132.0" text="Font Family:" textFill="#a81414" />
+                              <Label alignment="TOP_RIGHT" prefHeight="17.0" prefWidth="162.0" text="Font Size:" textFill="#bc2222" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                        <GridPane GridPane.columnIndex="1">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <RadioButton fx:id="italic" mnemonicParsing="false" prefHeight="17.0" prefWidth="123.0" text="Italic" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </RadioButton>
+                              <RadioButton fx:id="bold" mnemonicParsing="false" prefHeight="17.0" prefWidth="127.0" text="Bold">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </RadioButton>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+            <Tab text="Print Preview">
+               <content>
+                  <GridPane style="-fx-background-color: #d8c8c8e7;">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="264.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="118.0" minWidth="0.0" prefWidth="118.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="0.0" prefWidth="88.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="24.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <GridPane style="-fx-background-color: #d8c8c8e7;">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                        </GridPane>
+                     </children>
+                  </GridPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <HBox alignment="CENTER" prefHeight="310.0" prefWidth="599.0">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="386.0" prefWidth="705.0">
+               <content>
+                  <TextArea fx:id="txt" prefHeight="311.0" prefWidth="680.0" wrapText="true" />
+               </content>
+            </ScrollPane>
+         </children>
+         <VBox.margin>
+            <Insets top="50.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
